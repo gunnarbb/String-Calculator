@@ -8,13 +8,16 @@ public class Calculator{
       return 0;
     }
     else if (text.contains(",")){
-      return sumOfMultipleNumbers(splitNumbers(text));
+      return sumOfMultipleNumbers(splitNumbers(text,","));
+    }
+    else if (text.contains("\n")){
+      return sumOfMultipleNumbers(splitNumbers(text,"\n"));
     }
     return 1;
   }
 
-  public static String[] splitNumbers(String text){
-    return text.split(",");
+  public static String[] splitNumbers(String text, String sep){
+    return text.split(sep);
   }
 
   public static int sumOfMultipleNumbers(String [] numbers){
