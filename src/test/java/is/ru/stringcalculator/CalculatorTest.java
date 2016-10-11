@@ -77,4 +77,9 @@ public class CalculatorTest {
   public void testBigNumber(){
     assertEquals(0,Calculator.add("1001"));
   }
+
+  @Test
+  public void testBigNumbers(){
+    assertEquals(5,Calculator.add("1001,100324,9999,3\n2"));
+  }
 }
