@@ -5,7 +5,7 @@ public class Calculator{
   public static int add(String text){
 
     if (text.equals("")) {
-      return 0;
+        return 0;
     }
       text = replace(text,"\n",",");
       text  = delimeters(text);
@@ -64,6 +64,7 @@ public class Calculator{
   public static Boolean isBigNumber(int number){
     return number > 1000;
   }
+
   public static int toInt(String text){
     return Integer.parseInt(text);
   }
