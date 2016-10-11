@@ -99,4 +99,9 @@ public class CalculatorTest {
      }
      assertEquals(true,threwEx);
     }
+
+    @Test
+    public void testMultpileDelimeters(){
+      assertEquals(25, Calculator.add("//[*++*]\n8*++*5*++*12"));
+    }
 }
