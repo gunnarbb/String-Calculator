@@ -7,11 +7,6 @@ public class Calculator{
     if (text.equals("")) {
       return 0;
     }
-    else if (text.equals("-1")){
-      if (toInt(text) < 0){
-        throw new IllegalArgumentException("Negatives not allowed: " + text);
-      }
-    }
       text = replace(text,"\n",",");
       return sumOfMultipleNumbers(splitNumbers(text,","));
     }
@@ -27,8 +22,11 @@ public class Calculator{
   public static int sumOfMultipleNumbers(String [] numbers){
     int total = 0;
        for(String number : numbers){
-       total += toInt(number);
-   }
+         if (toInt(number) < 0){
+           throw new IllegalArgumentException("Negatives not allowed: " + number);
+         }
+         total += toInt(number);
+       }
    return total;
 }
   public static int toInt(String text){
