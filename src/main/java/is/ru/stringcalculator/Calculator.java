@@ -21,13 +21,17 @@ public class Calculator{
 
   public static int sumOfMultipleNumbers(String [] numbers){
     int total = 0;
-       for(String number : numbers){
-         if (toInt(number) < 0){
-           throw new IllegalArgumentException("Negatives not allowed: " + number);
+    String negatives = "";
+    for(String number : numbers){
+       if (toInt(number) < 0){
+         negatives += number + ",";
          }
          total += toInt(number);
-       }
-   return total;
+    }
+    if (!negatives.equals("")) {
+      throw new IllegalArgumentException("Negatives not allowed: " + negatives);
+    }
+    return total;
 }
   public static int toInt(String text){
     return Integer.parseInt(text);

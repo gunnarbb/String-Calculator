@@ -38,13 +38,25 @@ public class CalculatorTest {
   public void testNegativeNumber(){
 
     Boolean threwEx = false;
-      try {
-            Calculator.add("-1");
-      }
-      catch(IllegalArgumentException ex) {
+    try {
+          Calculator.add("-1");
+    }
+    catch(IllegalArgumentException ex) {
             threwEx = true;
-      }
-      assertEquals(true,threwEx);
+    }
+    assertEquals(true,threwEx);
   }
 
+  @Test
+  public void testTwoNegativeNumbers(){
+
+    Boolean threwEx = false;
+    try {
+          Calculator.add("-4,-3");
+    }
+    catch(IllegalArgumentException ex) {
+          threwEx = true;
+    }
+    assertEquals(true,threwEx);
+  }
 }
