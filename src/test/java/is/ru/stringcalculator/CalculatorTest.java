@@ -36,6 +36,15 @@ public class CalculatorTest {
 
   @Test
   public void testNegativeNumber(){
-    assertEquals("-1",Calculator.add("-1"));
+
+    Boolean threwEx = false;
+      try {
+            Calculator.add("-1");
+      }
+      catch(IllegalArgumentException ex) {
+            threwEx = true;
+      }
+      assertEquals(true,threwEx);
   }
+
 }
