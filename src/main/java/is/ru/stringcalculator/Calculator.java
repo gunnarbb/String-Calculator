@@ -9,24 +9,25 @@ public class Calculator{
     }
       text = replace(text,"\n",",");
       return sumOfMultipleNumbers(splitNumbers(text,","));
-    }
+  }
 
-    public static String replace(String text, String replace, String replacement){
+  public static String replace(String text, String replace, String replacement){
       return text.replace(replace,replacement);
-    }
+  }
 
-    public static String[] splitNumbers(String text, String separators){
-      return text.split(separators);
-    }
+  public static String[] splitNumbers(String text, String separators){
+    return text.split(separators);
+  }
 
   public static int sumOfMultipleNumbers(String [] numbers){
+
     int total = 0;
     String negatives = "";
     for(String number : numbers){
-       if (toInt(number) < 0){
-         negatives += number + ",";
+        if (isNegativeNumber(toInt(number))){
+          negatives += number + ",";
         }
-        else if (toInt(number) > 1000){
+        else if (isBigNumber(toInt(number))){
           continue;
         }
          total += toInt(number);
@@ -35,6 +36,14 @@ public class Calculator{
         handleNegatives(negatives);
     }
     return total;
+  }
+
+  public static Boolean isNegativeNumber(int number){
+    return number < 0;
+  }
+
+  public static Boolean isBigNumber(int number){
+    return number > 1000;
   }
   public static int toInt(String text){
     return Integer.parseInt(text);
