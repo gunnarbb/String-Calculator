@@ -25,7 +25,10 @@ public class Calculator{
     for(String number : numbers){
        if (toInt(number) < 0){
          negatives += number + ",";
-         }
+        }
+        else if (toInt(number) > 1000){
+          continue;
+        }
          total += toInt(number);
     }
     if (!negatives.equals("")) {
