@@ -8,11 +8,22 @@ public class Calculator{
       return 0;
     }
       text = replace(text,"\n",",");
+      text  = delimeters(text);
       return sumOfMultipleNumbers(splitNumbers(text,","));
   }
 
   public static String replace(String text, String replace, String replacement){
       return text.replace(replace,replacement);
+  }
+
+  public static String delimeters(String text){
+
+    if(text.startsWith("//[")) {
+			String theDelimeter = text.substring(3, text.indexOf("]"));
+			text = text.substring(5 + theDelimeter.length());
+			text = replace(text,theDelimeter, ",");
+		}
+    return text;
   }
 
   public static String[] splitNumbers(String text, String separators){
