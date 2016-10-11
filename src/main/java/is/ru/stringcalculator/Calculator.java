@@ -7,6 +7,11 @@ public class Calculator{
     if (text.equals("")) {
       return 0;
     }
+    else if (text.equals("-1")){
+      if (toInt(text) < 0){
+        throw new IllegalArgumentException("Negatives not allowed: " + text);
+      }
+    }
       text = replace(text,"\n",",");
       return sumOfMultipleNumbers(splitNumbers(text,","));
     }

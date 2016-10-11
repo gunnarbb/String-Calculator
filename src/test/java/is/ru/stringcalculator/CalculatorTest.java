@@ -33,4 +33,9 @@ public class CalculatorTest {
   public void testMultipleNumberWithNewLineAndCommas(){
     assertEquals(8,Calculator.add("2\n2,2\n2"));
   }
+
+  @Test
+  public void testNegativeNumber(){
+    assertEquals("-1",Calculator.add("-1"));
+  }
 }
