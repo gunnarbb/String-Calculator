@@ -29,11 +29,15 @@ public class Calculator{
          total += toInt(number);
     }
     if (!negatives.equals("")) {
-      throw new IllegalArgumentException("Negatives not allowed: " + negatives);
+        handleNegatives(negatives);
     }
     return total;
-}
+  }
   public static int toInt(String text){
     return Integer.parseInt(text);
+  }
+
+  public static void handleNegatives(String negatives){
+    throw new IllegalArgumentException("Negatives not allowed: " + negatives);
   }
 }
