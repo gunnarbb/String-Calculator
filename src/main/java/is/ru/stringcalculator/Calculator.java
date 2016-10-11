@@ -4,7 +4,7 @@ public class Calculator{
 
   public static int add(String text){
 
-    if (text.equals("")) {
+    if (isEmpty(text)) {
         return 0;
     }
       text = replace(text,"\n",",");
@@ -59,6 +59,10 @@ public class Calculator{
 
   public static Boolean isNegativeNumber(int number){
     return number < 0;
+  }
+
+  public static Boolean isEmpty(String text){
+    return text.equals("");
   }
 
   public static Boolean isBigNumber(int number){
