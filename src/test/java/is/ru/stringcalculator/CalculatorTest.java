@@ -87,4 +87,16 @@ public class CalculatorTest {
   public void testDelimeter() {
        assertEquals(13, Calculator.add("//[*]\n1*10*2"));
    }
+
+   @Test
+   public void testDelemieterWithNegatives() {
+     Boolean threwEx = false;
+     try {
+        Calculator.add("//[*]\n1*-10*-2");
+     }
+     catch(IllegalArgumentException ex) {
+           threwEx = true;
+     }
+     assertEquals(true,threwEx);
+    }
 }

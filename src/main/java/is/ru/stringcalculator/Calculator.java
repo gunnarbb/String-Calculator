@@ -19,7 +19,9 @@ public class Calculator{
   public static String delimeters(String text){
 
     if(text.startsWith("//[")) {
-			String theDelimeter = text.substring(3, text.indexOf("]"));
+      int startPos = 3;
+      String endingPlace = "]";
+			String theDelimeter = text.substring(startPos, text.indexOf(endingPlace));
 			text = correctTextForDelimeter(text, theDelimeter);
 		}
     return text;
