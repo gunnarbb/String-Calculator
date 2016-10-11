@@ -20,9 +20,15 @@ public class Calculator{
 
     if(text.startsWith("//[")) {
 			String theDelimeter = text.substring(3, text.indexOf("]"));
-			text = text.substring(5 + theDelimeter.length());
-			text = replace(text,theDelimeter, ",");
+			text = correctTextForDelimeter(text, theDelimeter);
 		}
+    return text;
+  }
+
+  public static String correctTextForDelimeter(String text, String delimeter){
+    int kText = 5;
+    text = text.substring(delimeter.length() + kText);
+    text = replace(text,delimeter,",");
     return text;
   }
 
