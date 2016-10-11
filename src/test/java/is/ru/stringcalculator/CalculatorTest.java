@@ -59,4 +59,17 @@ public class CalculatorTest {
     }
     assertEquals(true,threwEx);
   }
+
+  @Test
+  public void testMultipleNegativeNumbers(){
+
+    Boolean threwEx = false;
+    try {
+          Calculator.add("-4,-3,\n4,-7");
+    }
+    catch(IllegalArgumentException ex) {
+          threwEx = true;
+    }
+    assertEquals(true,threwEx);
+  }
 }
